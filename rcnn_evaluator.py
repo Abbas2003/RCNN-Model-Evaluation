@@ -83,7 +83,7 @@ class ObjectDetectionEvaluator:
         if keep_indices.sum() == 0:
             return {'boxes': [], 'scores': [], 'labels': []}
         
-        filtered_boxes = torch.tensor(predictions.get('proposals', []))[:len(confidence_scores)][keep_indices]
+        filtered_boxes = torch.tensor(predictions.get('boxes', []))[:len(confidence_scores)][keep_indices]
         filtered_scores = confidence_scores[keep_indices]
         filtered_labels = predicted_classes[keep_indices]
         

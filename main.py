@@ -21,8 +21,8 @@ def run_comprehensive_evaluation():
     models = comparator.models
     
     # Create mock dataset
-    test_dataset = MockDataset(size=50)
-    test_loader = DataLoader(test_dataset, batch_size=2, shuffle=False)
+    test_dataset = MockDataset(size=8)
+    test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False)
     
     # Initialize evaluator
     evaluator = ObjectDetectionEvaluator(models, dataset_name="PASCAL VOC")

@@ -119,7 +119,8 @@ class OptimizationExperiments:
             # Add logic for other model types if needed
             raise NotImplementedError("Model copy not implemented for this model type.")
 
-        model_copy = model_copy.to(self.model.device)
+        device = next(self.model.parameters()).device
+        model_copy = model_copy.to(device)
         return model_copy
     
     def _mini_training_loop(self, model, optimizer, epochs=3, train_loader=None):
@@ -143,7 +144,7 @@ class OptimizationExperiments:
                 optimizer.zero_grad()
                 
                 # Forward pass (simplified loss calculation)
-                predictions = model(images)
+                predictions = model(images, targets)
                 loss = self._calculate_simplified_loss(predictions, targets)
                 
                 # Backward pass
