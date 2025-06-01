@@ -1,0 +1,83 @@
+{
+  "summary": {
+    "best_optimizer": "SGD",
+    "best_learning_rate": "1.00e-04",
+    "best_augmentation": "basic"
+  },
+  "detailed_results": {
+    "optimizers": {
+      "SGD": {
+        "final_train_loss": 0.20736823603510857,
+        "final_val_loss": 0.23794849843134708,
+        "convergence_speed": 0.18969451934099196,
+        "stability": 0.8945698961895284
+      },
+      "Adam": {
+        "final_train_loss": 0.3232659660279751,
+        "final_val_loss": 0.4050611000270098,
+        "convergence_speed": 0.47281568348407743,
+        "stability": 0.5300619525225052
+      },
+      "AdamW": {
+        "final_train_loss": 0.44009730219841003,
+        "final_val_loss": 0.5227013001601225,
+        "convergence_speed": 0.38694330751895906,
+        "stability": 0.6217949307905049
+      },
+      "RMSprop": {
+        "final_train_loss": 2.7227313547719475e+17,
+        "final_val_loss": 3.165546596911521e+17,
+        "convergence_speed": 0,
+        "stability": 2.470683121970166e-37
+      }
+    },
+    "learning_rates": {
+      "1.00e-05": {
+        "learning_rate": 1e-05,
+        "final_loss": 0.4583713561296463,
+        "loss_reduction": 2.5632712990045547,
+        "stability": 0.4498655926731169
+      },
+      "1.00e-04": {
+        "learning_rate": 0.0001,
+        "final_loss": 0.27402172796428204,
+        "loss_reduction": 1.0008327569812536,
+        "stability": 0.8352071983614282
+      },
+      "1.00e-03": {
+        "learning_rate": 0.001,
+        "final_loss": 0.48940820060670376,
+        "loss_reduction": 3.888320260681212,
+        "stability": 0.23751182963532028
+      },
+      "1.00e-02": {
+        "learning_rate": 0.01,
+        "final_loss": 9.454613410800051e+26,
+        "loss_reduction": -4.1319968855346447e+24,
+        "stability": 1.9417486450725903e-49
+      }
+    },
+    "data_augmentation": {
+      "basic": {
+        "final_train_loss": 0.4778217226266861,
+        "final_val_loss": 0.5450406943801622,
+        "generalization_gap": 0.06721897175347613
+      },
+      "color_jitter": {
+        "final_train_loss": 0.5020446181297302,
+        "final_val_loss": 0.6340277638337606,
+        "generalization_gap": 0.13198314570403036
+      },
+      "random_crop": {
+        "final_train_loss": 0.5668961703777313,
+        "final_val_loss": 0.7112659660981001,
+        "generalization_gap": 0.1443697957203688
+      }
+    }
+  },
+  "recommendations": {
+    "optimizer": "Use SGD for best performance",
+    "learning_rate": "Optimal learning rate: 1.00e-04",
+    "augmentation": "Use basic strategy"
+  }
+}

@@ -14,8 +14,8 @@
         "precision": 0.4,
         "recall": 0.3,
         "f1_score": 0.34285714285714286,
-        "avg_inference_time": 0.24776512384414673,
-        "fps": 4.036080560834043
+        "avg_inference_time": 0.2595047354698181,
+        "fps": 3.8534942269533485
       },
       "Mask R-CNN": {
         "mAP": 0.0,
@@ -24,8 +24,8 @@
         "precision": 0.4,
         "recall": 0.3,
         "f1_score": 0.34285714285714286,
-        "avg_inference_time": 2.895544409751892,
-        "fps": 0.3453581981447441
+        "avg_inference_time": 2.463087350130081,
+        "fps": 0.405994533627558
       },
       "RetinaNet": {
         "mAP": 0.0,
@@ -34,8 +34,8 @@
         "precision": 0.4,
         "recall": 0.3,
         "f1_score": 0.34285714285714286,
-        "avg_inference_time": 2.147227704524994,
-        "fps": 0.46571679281737766
+        "avg_inference_time": 1.7414880096912384,
+        "fps": 0.5742215820235809
       }
     },
     "computational_efficiency": {
@@ -60,13 +60,13 @@
         "noise_robustness": 0,
         "blur_robustness": 1,
         "brightness_robustness": 1,
-        "scale_robustness": 0
+        "scale_robustness": 1
       },
       "Mask R-CNN": {
-        "noise_robustness": 1,
-        "blur_robustness": 0.6820486764254224,
-        "brightness_robustness": 0.6200630514221883,
-        "scale_robustness": 0.868191004247344
+        "noise_robustness": 0.9892897976915674,
+        "blur_robustness": 0.49229516274497925,
+        "brightness_robustness": 0.4557090549398849,
+        "scale_robustness": 0.7571148869709025
       },
       "RetinaNet": {
         "noise_robustness": 0,
@@ -86,8 +86,8 @@
         "recall": 0.3,
         "f1_score": 0.34285714285714286,
         "per_class_ap": {},
-        "avg_inference_time": 0.24776512384414673,
-        "fps": 4.036080560834043
+        "avg_inference_time": 0.2595047354698181,
+        "fps": 3.8534942269533485
       },
       "computational_efficiency": {
         "model_size_mb": 72.77070617675781,
@@ -98,7 +98,7 @@
         "noise_robustness": 0,
         "blur_robustness": 1,
         "brightness_robustness": 1,
-        "scale_robustness": 0
+        "scale_robustness": 1
       }
     },
     "Mask R-CNN": {
@@ -110,8 +110,8 @@
         "recall": 0.3,
         "f1_score": 0.34285714285714286,
         "per_class_ap": {},
-        "avg_inference_time": 2.895544409751892,
-        "fps": 0.3453581981447441
+        "avg_inference_time": 2.463087350130081,
+        "fps": 0.405994533627558
       },
       "computational_efficiency": {
         "model_size_mb": 168.34599685668945,
@@ -119,10 +119,10 @@
         "memory_efficiency": 0.5
       },
       "robustness": {
-        "noise_robustness": 1,
-        "blur_robustness": 0.6820486764254224,
-        "brightness_robustness": 0.6200630514221883,
-        "scale_robustness": 0.868191004247344
+        "noise_robustness": 0.9892897976915674,
+        "blur_robustness": 0.49229516274497925,
+        "brightness_robustness": 0.4557090549398849,
+        "scale_robustness": 0.7571148869709025
       }
     },
     "RetinaNet": {
@@ -134,8 +134,8 @@
         "recall": 0.3,
         "f1_score": 0.34285714285714286,
         "per_class_ap": {},
-        "avg_inference_time": 2.147227704524994,
-        "fps": 0.46571679281737766
+        "avg_inference_time": 1.7414880096912384,
+        "fps": 0.5742215820235809
       },
       "computational_efficiency": {
         "model_size_mb": 124.62268447875977,
@@ -157,9 +157,9 @@
       "RetinaNet": 0.0
     },
     "efficiency_ranking": {
-      "Faster R-CNN": 4.036080560834043,
-      "RetinaNet": 0.46571679281737766,
-      "Mask R-CNN": 0.3453581981447441
+      "Faster R-CNN": 3.8534942269533485,
+      "RetinaNet": 0.5742215820235809,
+      "Mask R-CNN": 0.405994533627558
     },
     "trade_offs": {
       "Faster R-CNN": {

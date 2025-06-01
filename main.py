@@ -6,7 +6,7 @@ from rcnn_framework import RCNNComparator  # Your own RCNN models comparator
 from rcnn_evaluator import ObjectDetectionEvaluator
 from optimization_experiments import OptimizationExperiments
 from mock_dataset import MockDataset
-# 
+from utils import collate_fn
 
 # Complete demonstration
 def run_comprehensive_evaluation():
@@ -22,7 +22,7 @@ def run_comprehensive_evaluation():
     
     # Create mock dataset
     test_dataset = MockDataset(size=8)
-    test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False)
+    test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False, collate_fn=collate_fn)
     
     # Initialize evaluator
     evaluator = ObjectDetectionEvaluator(models, dataset_name="PASCAL VOC")

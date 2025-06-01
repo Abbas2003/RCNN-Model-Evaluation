@@ -1,3 +1,4 @@
+from utils import collate_fn
 import torch
 import torch.nn.functional as F
 import torch.optim as optim
@@ -85,7 +86,7 @@ class OptimizationExperiments:
             # Create augmented dataset
             augmented_transform = transforms.Compose(transforms_list)
             augmented_dataset = self._create_augmented_dataset(augmented_transform)
-            augmented_loader = DataLoader(augmented_dataset, batch_size=4, shuffle=True)
+            augmented_loader = DataLoader(augmented_dataset, batch_size=4, shuffle=True, collate_fn=collate_fn)
             
             model_copy = self._create_model_copy()
             optimizer = optim.Adam(model_copy.parameters(), lr=1e-4)
@@ -138,19 +139,18 @@ class OptimizationExperiments:
             
             # Training phase
             for batch_idx, (images, targets) in enumerate(train_loader):
-                if batch_idx >= 10:  # Limit batches for quick experiments
+                if batch_idx >= 10:
                     break
-                
+
+                images = list(image.to(next(model.parameters()).device) for image in images)
+                targets = [{k: v.to(next(model.parameters()).device) for k, v in t.items()} for t in targets]
+
                 optimizer.zero_grad()
-                
-                # Forward pass (simplified loss calculation)
-                predictions = model(images, targets)
-                loss = self._calculate_simplified_loss(predictions, targets)
-                
-                # Backward pass
+                loss_dict = model(images, targets)
+                loss = sum(loss for loss in loss_dict.values())
                 loss.backward()
                 optimizer.step()
-                
+
                 epoch_train_loss += loss.item()
                 batch_count += 1
             
